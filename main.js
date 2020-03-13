@@ -33,18 +33,20 @@ function createGrid() {
     var displayCol = new Element("div", "col-12 pt-5 bg-dark", "displayCol");
     // set up grid in secondCol
 
-    var count = 0;
+    var k = 0;
     for (var i = 0; i < 5; i++) {
         var gridRows = new Element("div", "row d-flex h-50", "gridRows");
         for (var j = 0; j < 4; j++) {
-            var gridCols = new Element("div", "col-3 pt-5 mw-100 text-center border border-dark bg-secondary", `gridCols${count}`);
-            
-            var btns = new Button("+", `btns${count}`);
+            var gridCols = new Element("div", "col-3 pt-1 mw-100 text-center border border-dark bg-secondary", `gridCols${k}`);
+            var btn = new Button(btns[k], `btns${k}`);
             // btn needs an event listener for click
             // btns.addEventListener('click', clickSquare);
 
+            // append btn to gridCol
+            gridCols.element.appendChild(btn.element);
             gridRows.element.appendChild(gridCols.element);
-            count++;
+
+            k++;
         }
         displayCol.element.appendChild(gridRows.element);
 
