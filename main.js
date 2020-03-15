@@ -33,7 +33,7 @@ function createGrid() {
     var calculatorRow = new Element("div", "row d-flex pt-5 mt-5", "calculatorRow");
     var calculatorCol = new Element("div", "col-12 p-3 text-white bg-secondary border border-dark", "calculatorCol");
     var displayRow = new Element("div", "row d-flex p-4", "displayRow");
-    var displayCol = new Element("div", "col-12 bg-warning m-1 float-center p-5", "displayCol");
+    var displayCol = new Element("div", "col-12 bg-warning m-1 float-center p-4 display-4", "displayCol");
     displayRow.element.appendChild(displayCol.element);
     calculatorCol.element.appendChild(displayRow.element);
     // --- set up grid in secondCol
@@ -50,6 +50,7 @@ function createGrid() {
             gridCols.element.appendChild(btn.element);
             gridRows.element.appendChild(gridCols.element);
             k++;
+            console.log(btn[0]);
         }
         calculatorCol.element.appendChild(gridRows.element);
 
@@ -71,38 +72,64 @@ function createGrid() {
 //     this.element = document.getElementById;
 //     this.text = element.textContent;
 //     this.Model = m;
-
 // }
 
 // --------- eventListener function for gridCols/updateDisplay
+// function clickButton(){
+    // takes info from click event and passes it to array in Model
+    // (this.model.updateArray(this.view))
+
 // function updateDisplay(e) {
-//     btn.element.textContent = e.target.element.textContent;
-// }
+    // takes info from updated array after doMath functions and sends it to Display  in View
+    // (this.view.updateDisplay(this.number))
 
+// ----------> function to send error message to Display
 
-
-
-// ----------> function to send error message to displayCol
-// ----------> function to start calculator
 
 // -----------> MODEL functions, etc
 // class Model() {
 //     constructor()
 //     this.View = v;
-//     this.Controller = c;
 // }
 
- // ---------> var for input values 0, 1, 2
-// var inputArray = ["null", "null", "null"]; 
+// ---------> var for input values 0, 1, 2
+var inputArray = ["null", "null", "null"];
+var newArray = [];
+
+// ----------->doMath function(s)
+// function updateArray() {
+// take info from input Array; send to doMath function; pass result to newArray
+// function doMath(){ 
+    // take inputArray, take [0], [1], [2] and put them into a string 
+    // when btns[19] clicked, doMath
+    // put string in Number.parseFloat()
+    // return result to newArray[0]
+    // this.result = newArray[0];
+    // this.view.updateDisplay(this.result);
 
 
-    // ----------->doMath function(s)
 
-    // ----------->function to limit .'s
+// ----------->function to limit .'s
+function limitDecimal(){
+    // remove onclick from btns[18] after clicked (this.removeEventListener('click', function));
 
-    // ----------->function to create error message fo /0
+}
+
+// ----------->function to create error message for /0
+function sendError() {
+    if (inputArray = ["", "/", "0"]) {
+        document.getElementById("displayCol").innerHTML = "ERROR";
+    }
+}
+
+// ------------>function to set Display to 0 when C is clicked
+function setDisplay() {
+    document.getElementById("displayCol").innerHTML = "0";
+}
+btns[0].onclick = function setDisplay() {
+}
 
 
 // ------ call functions
 createGrid();
-
+setDisplay();
