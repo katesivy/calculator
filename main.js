@@ -67,15 +67,15 @@ function createGrid() {
 }
 // ---------CONTROLLER functions, etc
 
-// class Controller(e) {
-//     constructor()
-//     this.element = document.getElementById;
-//     this.text = element.textContent;
-//     this.Model = m;
-// }
+/*class Controller(e) {
+    constructor()
+    this.element = document.getElementById.displayCol;
+    this.text = displayCol.textContent;
+    this.Model = m;
+}*/
 
 // --------- eventListener function for gridCols/updateDisplay
-// function clickButton(){
+// function clickButton(e){
     // takes info from click event and passes it to array in Model
     // (this.model.updateArray(this.view))
 
@@ -92,27 +92,27 @@ function createGrid() {
 //     this.View = v;
 // }
 
-// ---------> var for input values 0, 1, 2
+// ----------->doMath function(s)
 var inputArray = ["null", "null", "null"];
 var newArray = [];
 
-// ----------->doMath function(s)
-// function updateArray() {
-// take info from input Array; send to doMath function; pass result to newArray
-// function doMath(){ 
-    // take inputArray, take [0], [1], [2] and put them into a string 
-    // when btns[19] clicked, doMath
-    // put string in Number.parseFloat()
-    // return result to newArray[0]
-    // this.result = newArray[0];
-    // this.view.updateDisplay(this.result);
+// -------->take info from input Array; send to doMath function; pass result to newArray
+/* function doMath(){ 
+    take inputArray, take [0], [1], [2] and put them into a string 
+    when btns[19] is clicked, or after inputArray has 3 values(?which/both?), doMath()
+    change array to string: inputArray.join(" ")
+    return value of string, store in variable: result
+    put string back to number: Number.parseFloat(result); store in var: numberResult
+    let newArray = inputArray[0].bind(numberResult)*/
+    
+
+// this.view.updateDisplay(this.numberResult);/m.setView(v)?
 
 
 
 // ----------->function to limit .'s
 function limitDecimal(){
-    // remove onclick from btns[18] after clicked (this.removeEventListener('click', function));
-
+    // remove onclick from btns[18] after clicked: (this.removeEventListener('click', function));
 }
 
 // ----------->function to create error message for /0
